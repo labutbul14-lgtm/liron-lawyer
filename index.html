@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עו"ד לירון אבוטבול | דיני עבודה - ייצוג עובדים ומעבידים</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        /* ניווט */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* הירו סקשן */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.92), rgba(44, 62, 80, 0.88)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 10rem 2rem 6rem;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* סקציית שירותים */
+        .services-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            border-left: 5px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--secondary);
+            transform: translateX(100%);
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-card li {
+            margin-bottom: 0.8rem;
+            padding-right: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: '•';
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* סקציית אודות */
+        .about-section {
+            padding: 5rem 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-item i {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-top: 0.2rem;
+        }
+
+        .about-image {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            padding: 3rem;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-image h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image .highlight {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 1rem 0;
+        }
+
+        .about-image p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* מקרי בוחן */
+        .cases-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .case-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .case-card:hover {
+            border-bottom-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .case-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-card h4 i {
+            color: var(--secondary);
+        }
+
+        .case-card .outcome {
+            background-color: #e8f4fc;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            border-right: 4px solid var(--accent);
+        }
+
+        .case-card .outcome strong {
+            color: var(--primary);
+        }
+
+        /* קשר */
+        .contact-section {
+            padding: 5rem 2rem;
+            background-color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .contact-details {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details i {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            width: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background-color: #f8f9fa;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        /* פוטר */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 5px solid var(--secondary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
+
+        /* רספונסיביות */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border-top: 3px solid var(--secondary);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image .highlight {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 8rem 1rem 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.9rem 1.5rem;
+                min-width: 100%;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .service-card, .case-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* אנימציות */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ניווט -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-balance-scale"></i>
+                עו"ד לירון אבוטבול
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#cases">מקרי בוחן</a></li>
+                <li><a href="#contact">יצירת קשר</a></li>
+                <li><a href="tel:05420505373" class="btn btn-primary">חייגו עכשיו</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- הירו סקשן -->
+    <section class="hero">
+        <h1>עו"ד לירון אבוטבול - דיני עבודה</h1>
+        <p>ייצוג מקצועי לעובדים ומעבידים • הגנה על זכויות במקום העבודה • ליווי משפטי צמוד</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn btn-primary">קבע פגישת ייעוץ</a>
+            <a href="tel:05420505373" class="btn btn-secondary">דברו איתי עכשיו</a>
+        </div>
+    </section>
+
+    <!-- שירותים -->
+    <section id="services" class="services-section">
+        <h2 class="section-title">שירותים משפטיים בדיני עבודה</h2>
+        <p class="section-subtitle">מגוון רחב של שירותים משפטיים מקצועיים בתחום דיני העבודה</p>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>ייצוג עובדים</h3>
+                <p>ליווי משפטי מלא לזכויות העובד במקום העבודה</p>
+                <ul>
+                    <li>פיטורים לא חוקיים</li>
+                    <li>הפרת זכויות עובד</li>
+                    <li>תביעות שכר וזכויות סוציאליות</li>
+                    <li>הטרדות מיניות ומעסיק</li>
+                    <li>אפליה במקום העבודה</li>
+                </ul>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>ייצוג מעבידים</h3>
+                <p>ייעוץ וליווי למעסיקים בניהול כוח אדם</p>
+                <ul>
+                    <li>ניסוח חוזי עבודה</li>
+                    <li>מדיניות פיטורים נכונה</li>
+                    <li>התמודדות עם תביעות עובדים</li>
+                    <li>ייעוץ בדיני עבודה שוטפים</li>
+                    <li>פרוצדורות משמעת</li>
+                </ul>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h3>חוזים והסכמים</h3>
+                <p>ניסוח והתאמה של מסמכים משפטיים</p>
+                <ul>
+                    <li>חוזי עבודה אישיים וקיבוציים</li>
+                    <li>הסכמי סודיות ואי תחרות</li>
+                    <li>הסכמי פרישה ופיצויים</li>
+                    <li>הסכמי פשרה ובוררות</li>
+                    <li>מדיניות חברה ותקנונים</li>
+                </ul>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3>הליכים משפטיים</h3>
+                <p>ייצוג בבתי הדין לעבודה ובתי משפט</p>
+                <ul>
+                    <li>תביעות לבית הדין לעבודה</li>
+                    <li>ערעורים על החלטות</li>
+                    <li>הליכי בוררות וגישור</li>
+                    <li>ייצוג בדיונים מול משרד העבודה</li>
+                    <li>הליכים מנהליים</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- אודות -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <h2>אודות המשרד</h2>
+                <p>משרד עו"ד לירון אבוטבול מתמחה בדיני עבודה ונותן שירותים משפטיים מקיפים הן לעובדים והן למעבידים. המשרד שם דגש על יחס אישי, זמינות מלאה ותוצאות מיטביות עבור הלקוחות.</p>
+                
+                <p>עם ניסיון מעשי עשיר בבתי הדין לעבודה, אני מביא ידע מעמיק והבנה של הדקויות בתחום דיני העבודה הישראלי, תוך התאמת הפתרון המשפטי האופטימלי לצרכים הספציפיים של כל לקוח.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>מקצועיות</strong>
+                            <p>ידע מעמיק בדיני עבודה ישראלים</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>זמינות</strong>
+                            <p>ליווי צמוד לאורך כל התהליך</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>אסטרטגיה</strong>
+                            <p>תכנון תביעה מושכל ומותאם אישית</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>שקיפות</strong>
+                            <p>תמחור ברור וללא הפתעות</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image fade-in">
+                <h3>המומחיות שלנו</h3>
+                <p>מתמחים בדיני עבודה עם דגש על:</p>
+                <div class="highlight">95%</div>
+                <p>שיעור הצלחה בתיקי דיני עבודה</p>
+                <div style="margin-top: 2rem; font-size: 1.1rem;">
+                    <p><i class="fas fa-star"></i> מאות תיקים מטופלים</p>
+                    <p><i class="fas fa-star"></i> ניסיון בבתי דין לעבודה</p>
+                    <p><i class="fas fa-star"></i> לקוחות מרוצים ברחבי הארץ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- מקרי בוחן -->
+    <section id="cases" class="cases-section">
+        <h2 class="section-title">מקרי בוחן מהפרקטיקה</h2>
+        <p class="section-subtitle">דוגמאות לטיפול מקצועי בתיקי דיני עבודה מורכבים</p>
+        
+        <div class="cases-grid">
+            <div class="case-card fade-in">
+                <h4><i class="fas fa-briefcase-medical"></i> פיצויים לפיטורין שלא כדין</h4>
+                <p>ייצוג עובד ותיק בחברה גדולה שפוטר לאחר 15 שנות עבודה ללא סיבה מוצדקת. הטיפול כלל איסוף ראיות, ניהול מו"מ והגשת תביעה.</p>
+                <div class="outcome">
+                    <strong>תוצאה:</strong> פיצויים בגובה 18 חודשי משכורת + הוצאות משפט.
+                </div>
+            </div>
+            
+            <div class="case-card fade-in">
+                <h4><i class="fas fa-female"></i> תביעת הטרדה מינית</h4>
+                <p>ליווי עובדת שהוטרדה מינית על ידי מנהלה הישיר. הטיפול כלל הגשת תלונה, ליווי בחקירות וייצוג בבית הדין לעבודה.</p>
+                <div class="outcome">
+                    <strong>תוצאה:</strong> פיצוי גבוה לעובדת והדחת המנהל מתפקידו.
+                </div>
+            </div>
+            
+            <div class="case-card fade-in">
+                <h4><i class="fas fa-building"></i> הגנה על מעביד מתביעת עובד</h4>
+                <p>ייצוג חברת הייטק בתביעה של עובד שטען לפיטורים שלא כדין. הכנת הגנות, ניהול משא ומתן ודיונים בבית הדין.</p>
+                <div class="outcome">
+                    <strong>תוצאה:</strong> דחיית התביעה וקביעת שהפיטורים היו חוקיים.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- יצירת קשר -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">צור קשר</h2>
+        <p class="section-subtitle">מוזמנים ליצור קשר בכל שאלה או לקביעת פגישת ייעוץ</p>
+        
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <h3>פרטי התקשרות</h3>
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-user-tie"></i>
+                        <div>
+                            <strong>עו"ד לירון אבוטבול</strong>
+                            <div>מומחה לדיני עבודה</div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:05420505373">054-20505373</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:lironn.abutbul@gmail.com">lironn.abutbul@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>שעות פעילות: א'-ה' 9:00-19:00</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>פגישות בתל אביב והמרכז</div>
+                    </li>
+                </ul>
+                
+                <div style="background-color: #f0f7ff; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">פגישת ייעוץ ראשונית</h4>
+                    <p>פגישת היכרות ראשונית ללא התחייבות, בה נבחן את פרטי המקרה ונציע את הדרך הטובה ביותר לפעולה.</p>
+                </div>
+            </div>
+            
+            <div class="contact-form fade-in">
+                <h3>שלחו הודעה</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">שם מלא *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">טלפון *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">דוא"ל</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">סוג הפנייה</label>
+                        <select id="subject" name="subject">
+                            <option value="employee">ייצוג עובד</option>
+                            <option value="employer">ייצוג מעביד</option>
+                            <option value="contract">חוזים והסכמים</option>
+                            <option value="consultation">ייעוץ משפטי</option>
+                            <option value="other">אחר</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">תיאור הפנייה *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="תארו בקצרה את מטרת הפנייה..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                        <i class="fas fa-paper-plane"></i> שלח פנייה
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- פוטר -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">עו"ד לירון אבוטבול - דיני עבודה</div>
+            <p>ייצוג משפטי מקצועי לעובדים ומעבידים | הגנה על זכויות במקום העבודה</p>
+            
+            <div class="footer-links">
+                <a href="#services">שירותים</a>
+                <a href="#about">אודות</a>
+                <a href="#cases">מקרי בוחן</a>
+                <a href="#contact">יצירת קשר</a>
+                <a href="tel:05420505373">חיוג מהיר</a>
+            </div>
+            
+            <div class="copyright">
+                © כל הזכויות שמורות לעו"ד לירון אבוטבול | האתר מעוצב לנוחות הגלישה ומותאם לכל המכשירים
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // תפריט מובייל
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+
+        // סגירת תפריט מובייל בלחיצה על קישור
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // סגירת תפריט בלחיצה מחוץ לתפריט
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // טופס יצירת קשר
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // בדיקת ולידציה בסיסית
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (name.trim() === '' || phone.trim() === '') {
+                alert('אנא מלא את השדות המסומנים בכוכבית');
+                return;
+            }
+            
+            // כאן תהיה בדרך כלל שליחה לשרת
+            // לצורכי הדגמה - הצגת הודעת הצלחה
+            alert('תודה רבה ' + name + '! פנייתך התקבלה ונחזור אליך בהקדם.');
+            this.reset();
+        });
+
+        // אנימציות Scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // עדכון אוטומטי של שנה בפוטר
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.copyright');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = `© ${year} כל הזכויות שמורות לעו"ד לירון אבוטבול | האתר מעוצב לנוחות הגלישה ומותאם לכל המכשירים`;
+            }
+            
+            // אתחול אנימציות
+            fadeInOnScroll();
+        });
+
+        // האזנה לסקרול
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // אתחול ראשוני של אנימציות
+        fadeInOnScroll();
+
+        // החלקה חלקה לקישורים
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
